@@ -1,4 +1,4 @@
-# NoSQL
+# Python
 
 Personal studies about Python are housed in this repository.
 
