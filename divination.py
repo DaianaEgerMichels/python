@@ -7,7 +7,7 @@ total_attempts = 3
 round = 1
 
 while (round <= total_attempts):
-    print("Attempts:", round, "of", total_attempts)
+    print("Attempts: {} of {}".format(round, total_attempts))
     kick = input("Enter a number: ")
     print("You typed: ", kick)
 
