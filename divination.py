@@ -28,6 +28,7 @@ print("*******************************")
 secret_number = random.randrange(1, 101)
 total_attempts = 0
 rounded = 1
+points = 1000
 print(secret_number)
 
 print("Choose difficulty level")
@@ -59,6 +60,7 @@ for rounded in range(1, total_attempts + 1):
 
     if (hit):
         print("You're right :)")
+        print("Your score was {} points".format(points))
         break
     else:
         print("You're wrong :(")
@@ -66,5 +68,7 @@ for rounded in range(1, total_attempts + 1):
             print("Your kick was bigger than the secret number.")
         elif(smaller):
             print("Your kick was smaller than the secret number.")
+        lost_points = abs(secret_number - kick)
+        points = points - lost_points
 
 print("End the game...")
