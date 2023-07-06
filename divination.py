@@ -1,13 +1,5 @@
 import random
 
-print("*******************************")
-print("Welcome to the divination game!")
-print("*******************************")
-
-secret_number = random.randrange(1, 101)
-total_attempts = 3
-rounded = 1
-print(secret_number)
 # while (rounded <= total_attempts):
 #     print("Attempts: {} of {}".format(rounded, total_attempts))
 #     kick = input("Enter a number: ")
@@ -29,6 +21,26 @@ print(secret_number)
 #             print("Your kick was smaller than the secret number.")
 #
 #     rounded += 1
+print("*******************************")
+print("Welcome to the divination game!")
+print("*******************************")
+
+secret_number = random.randrange(1, 101)
+total_attempts = 0
+rounded = 1
+print(secret_number)
+
+print("Choose difficulty level")
+print("(1) Easy (2) Medium (3) Difficult")
+
+level = int(input("Set the level:"))
+
+if (level == 1):
+    total_attempts = 20
+elif (level == 2):
+    total_attempts = 10
+else:
+    total_attempts = 5
 
 for rounded in range(1, total_attempts + 1):
     print("Attempts: {} of {}".format(rounded, total_attempts))
