@@ -11,10 +11,11 @@ def play():
     while(not hanged and not right):
 
         kick = input("Say a letter: ")
+        kick = kick.strip()
         index = 0
 
         for letter in secret_word:
-            if(kick == letter):
+            if(kick.lower() == letter.lower()):
                 print("Found the letter {} in position {}".format(letter, index))
             index = index + 1
 
