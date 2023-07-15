@@ -4,9 +4,12 @@ def play():
     print("*******************************")
 
     secret_word = "flower"
+    right_letters = ["_", "_", "_", "_", "_", "_"]
 
     right = False
     hanged = False
+
+    print(right_letters)
 
     while(not hanged and not right):
 
@@ -17,6 +20,8 @@ def play():
         for letter in secret_word:
             if(kick.lower() == letter.lower()):
                 print("Found the letter {} in position {}".format(letter, index))
+                right_letters[index] = letter
+                print(right_letters)
             index = index + 1
 
         print("playing...")
