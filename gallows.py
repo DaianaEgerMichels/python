@@ -28,6 +28,7 @@ def play():
                 index += 1
         else:
             mistakes += 1
+            print("Ops, you made a mistake! {} attempts left.".format(6 - mistakes))
 
         hanged = mistakes == 6
         right = "_" not in right_letters
