@@ -2,21 +2,9 @@ import random
 
 
 def play():
-    print("*******************************")
-    print("Welcome to the gallows game!")
-    print("*******************************")
+    welcome_game()
+    secret_word = get_secret_word()
 
-    file = open("words.txt", "r")
-    words = []
-
-    for line in file:
-        line = line.strip()
-        words.append(line)
-
-    file.close()
-
-    number = random.randrange(0, len(words))
-    secret_word = words[number].upper()
     right_letters = ["_" for letter in secret_word]
 
     right = False
@@ -52,6 +40,24 @@ def play():
     else:
         print("You lost :(")
     print("End the game...")
+
+
+def get_secret_word():
+    file = open("words.txt", "r")
+    words = []
+    for line in file:
+        line = line.strip()
+        words.append(line)
+    file.close()
+    number = random.randrange(0, len(words))
+    secret_word = words[number].upper()
+    return secret_word
+
+
+def welcome_game():
+    print("*******************************")
+    print("Welcome to the gallows game!")
+    print("*******************************")
 
 if (__name__ == "__main__"):
     play()
