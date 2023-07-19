@@ -1,9 +1,22 @@
+import random
+
+
 def play():
     print("*******************************")
     print("Welcome to the gallows game!")
     print("*******************************")
 
-    secret_word = "flower".upper()
+    file = open("words.txt", "r")
+    words = []
+
+    for line in file:
+        line = line.strip()
+        words.append(line)
+
+    file.close()
+
+    number = random.randrange(0, len(words))
+    secret_word = words[number].upper()
     right_letters = ["_" for letter in secret_word]
 
     right = False
