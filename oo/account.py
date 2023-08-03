@@ -26,8 +26,10 @@ class Account:
     def get_owner(self):
         return self.__owner
 
-    def get_limit(self):
+    @property
+    def limit(self):
         return self.__limit
 
-    def set_limit(self, limit):
+    @limit.setter
+    def limit(self, limit):
         self.__limit = limit
