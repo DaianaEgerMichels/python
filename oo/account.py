@@ -13,8 +13,15 @@ class Account:
     def to_deposit(self, value):
         self.__balance += value
 
+    def __can_withdraw(self, value_withdraw):
+        value_available = self.__balance + self.__limit
+        return value_withdraw <= value_available
+
     def to_withdraw(self, value):
-        self.__balance -= value
+        if(self.__can_withdraw(value)):
+            self.__balance -= value
+        else:
+            print("The value {} has exceeded the limit", value)
 
     def to_transfer(self, value, destiny):
         self.to_withdraw(value)
