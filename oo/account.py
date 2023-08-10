@@ -33,3 +33,11 @@ class Account:
     @limit.setter
     def limit(self, limit):
         self.__limit = limit
+
+    @staticmethod
+    def bank_code():
+        return "001"
+
+    @staticmethod
+    def banks_codes():
+        return {"BB": "001", "Caixa": "104", "Bradesco": "237"}
